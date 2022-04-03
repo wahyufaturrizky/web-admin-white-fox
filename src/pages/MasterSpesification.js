@@ -47,7 +47,6 @@ const formItemLayout = {
 };
 
 const MasterSpesification = (props) => {
-  const [contextHolder] = Modal.useModal();
   const [form] = Form.useForm();
   const [dataListMasterSpec] = useState([]);
   const [paginationPopUpNotif] = useState({
@@ -571,7 +570,6 @@ const MasterSpesification = (props) => {
           dataSource={dataList}
         />
       </Modal>
-      {contextHolder}
     </Content>
   );
 };

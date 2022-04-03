@@ -73,6 +73,7 @@ const WrapperContent = (props) => {
       : null
   );
   const [collapsed, setCollapsed] = useState(false);
+  console.log(props.location);
   const listMenu = [
     {
       title: "Projects",
