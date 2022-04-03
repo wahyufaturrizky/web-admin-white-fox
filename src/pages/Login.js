@@ -1,14 +1,4 @@
-import {
-  Button,
-  Col,
-  Form,
-  Image,
-  Input,
-  Layout,
-  Modal,
-  Row,
-  Typography,
-} from "antd";
+import { Button, Col, Form, Image, Input, Layout, Row, Typography } from "antd";
 import React, { useEffect, useState } from "react";
 import { auth } from "../services/auth";
 import { ColorBaseEnum } from "../styles/Colors";
@@ -18,7 +8,6 @@ const { Content } = Layout;
 const { Title } = Typography;
 
 const Login = (props) => {
-  const [contextHolder] = Modal.useModal();
   const [isLoading] = useState(false);
   useEffect(() => {
     props.history.push(auth() ? "/overview" : "/");
@@ -192,7 +181,6 @@ const Login = (props) => {
           </Content>
         </Col>
       </Row>
-      {contextHolder}
     </Layout>
   );
 };
