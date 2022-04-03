@@ -5,22 +5,21 @@ import {
   Image,
   Input,
   Layout,
+  Modal,
   Row,
   Typography,
-  Modal,
 } from "antd";
 import React, { useEffect, useState } from "react";
 import { auth } from "../services/auth";
-import { postLogin } from "../services/retrieveData";
-import { ColorBaseEnum, ColorPrimaryEnum } from "../styles/Colors";
+import { ColorBaseEnum } from "../styles/Colors";
 import "../styles/Dashboard.css";
 
 const { Content } = Layout;
 const { Title } = Typography;
 
 const Login = (props) => {
-  const [modal, contextHolder] = Modal.useModal();
-  const [isLoading, setIsLoading] = useState(false);
+  const [contextHolder] = Modal.useModal();
+  const [isLoading] = useState(false);
   useEffect(() => {
     props.history.push(auth() ? "/overview" : "/");
   }, [props.history]);

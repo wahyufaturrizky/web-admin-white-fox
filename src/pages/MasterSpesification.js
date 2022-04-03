@@ -20,7 +20,7 @@ import {
 } from "antd";
 import moment from "moment";
 import React, { useState } from "react";
-import { ColorBaseEnum, ColorPrimaryEnum } from "../styles/Colors";
+import { ColorBaseEnum } from "../styles/Colors";
 import { MarginEnum } from "../styles/Spacer";
 
 const { Content } = Layout;
@@ -47,21 +47,20 @@ const formItemLayout = {
 };
 
 const MasterSpesification = (props) => {
-  const [modal, contextHolder] = Modal.useModal();
+  const [contextHolder] = Modal.useModal();
   const [form] = Form.useForm();
-  const [dataListMasterSpec, setDataListMasterSpec] = useState([]);
-  const [paginationPopUpNotif, setPaginationPopUpNotif] = useState({
+  const [dataListMasterSpec] = useState([]);
+  const [paginationPopUpNotif] = useState({
     current: 1,
     pageSize: 5,
   });
-  const [paginationMasterSpec, setPaginationMasterSpec] = useState({
+  const [paginationMasterSpec] = useState({
     current: 1,
     pageSize: 10,
   });
-  const [dataListMasterMaterialGroup, setDataListMasterMaterialGroup] =
-    useState([]);
+  const [dataListMasterMaterialGroup] = useState([]);
   const [fields, setFields] = useState([]);
-  const [dataPriority, setDataPriority] = useState(null);
+  const [dataPriority] = useState(null);
   const [isModalActionVisible, setIsModalActionVisible] = useState({
     dataRow: null,
     typeAction: "",
@@ -75,10 +74,8 @@ const MasterSpesification = (props) => {
   });
   const { titleNotif, dataList, isShowModalNotif, headerTableContent } =
     isModalStateNotif;
-  const [isLoading, setIsLoading] = useState(false);
-  const [isShowPopUp, setIsShowPopUp] = useState(
-    props.location.state?.isShowPopNotif
-  );
+  const [isLoading] = useState(false);
+  const [setIsShowPopUp] = useState(props.location.state?.isShowPopNotif);
   const { isShowModalAction, typeAction, dataRow } = isModalActionVisible;
 
   const columnsTable = [
